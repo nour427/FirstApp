@@ -1,0 +1,141 @@
+<div mat-dialog-title style="display: flex; ">
+
+    <mat-card class="icon1">
+      <mat-icon class="mat-icon-custom">layers</mat-icon>
+    </mat-card>
+    <div class="text">
+    <h2>Select plan</h2>
+    <h4>Simple and flexible per-user pricing.</h4>
+  </div>
+</div>
+<mat-divider></mat-divider>
+
+<div mat-dialog-content>
+  <form class="example-section" [formGroup]="payment" (ngSubmit)="go()">
+    <div style="display: flex"  >
+
+
+      <mat-radio-group class="example-radio-group" formControlName="radio"
+       required>
+
+
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-radio-button
+            value="1"
+            color="primary"
+            class="example-margin"
+
+          >
+        </mat-radio-button>
+          <mat-card-title>
+            <h1>2999€/Mensuel</h1>
+            <h3>Standard</h3>
+          </mat-card-title>
+          <mat-card-subtitle>billed annually</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <div>
+            <mat-icon style="color: #1fbae0">check_circle_outline </mat-icon>
+
+            <span>Multi project</span>
+          </div>
+          <div>
+            <mat-icon style="color: #1fbae0">check_circle_outline</mat-icon>
+            <span> Stockage sur mesure </span>
+          </div>
+
+          <div>
+            <mat-icon style="color: #1fbae0">check_circle_outline</mat-icon>
+            <span> 24/7 Support </span>
+          </div>
+
+          <div>
+            <mat-icon style="color: #1fbae0">check_circle_outline</mat-icon>
+            <span> Utilisateurs illimités </span>
+          </div>
+        </mat-card-content>
+        <mat-card-actions> </mat-card-actions>
+      </mat-card>
+
+      <mat-card class="example-card">
+        <mat-card-header>
+
+          <mat-radio-button
+          value="2"
+            color="primary"
+            class="example-margin"
+
+          ></mat-radio-button>
+
+          <mat-card-title>
+            <h1>2999€/Mensuel</h1>
+            <h3>Personnaliser</h3>
+          </mat-card-title>
+          <mat-card-subtitle>Contacter nous</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <div>
+            <mat-icon style="color: #1fbae0">check_circle_outline </mat-icon>
+
+            <span>Multi project</span>
+          </div>
+          <div>
+            <mat-icon style="color: #1fbae0">check_circle_outline</mat-icon>
+            <span> Stockage sur mesure </span>
+          </div>
+
+          <div>
+            <mat-icon style="color: #1fbae0">check_circle_outline</mat-icon>
+            <span> 24/7 Support </span>
+          </div>
+
+          <div>
+            <mat-icon style="color: #1fbae0">check_circle_outline</mat-icon>
+            <span> Utilisateurs illimités </span>
+          </div>
+        </mat-card-content>
+        <mat-card-actions> </mat-card-actions>
+      </mat-card>
+    </mat-radio-group>
+
+
+
+    </div>
+    <mat-error *ngIf="payment.get('radio')!.errors">
+      veuillez choisir une méthode
+    </mat-error>
+
+    <mat-divider></mat-divider>
+
+    <div class="boutons">
+      <button
+        mat-raised-button
+        type="submit"
+        class="bouton1"
+
+        (click)="openPaymentdetails()"
+
+      >
+        confirmer
+
+      </button>
+
+      <button
+        mat-raised-button
+        [mat-dialog-close]="true"
+        color="basic"
+        class="bouton2"
+
+
+        (click)="openDialog()"
+      >
+        Précedente
+      </button>
+    </div>
+  </form>
+</div>
+
+<div mat-dialog-actions></div>
+
+

@@ -1,0 +1,85 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+.example-form-field {
+  margin-right: 20px;
+
+
+}
+h2{
+
+  color: black;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+h4 {
+  color: hwb(0 50% 50%);
+  text-align: left;
+
+}
+mat-form-field {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  align-self: center;
+  align-items: center;
+  height: 70px;
+  width: 300px;
+color:#1fbae0;}
+.mat-form-field-appearance-outline .mat-form-field-outline{
+  color:#1fbae0
+  ;
+}
+
+::ng-deep .mat-focus-indicator:hover {
+  background-color: #1fbae0 !important;
+}
+
+::ng-deep .mat-calendar-body-selected {
+  background-color: #1fbae0 !important;
+}
+
+::ng-deep .mat-calendar-body-cell-content .mat-focus-indicator {
+  background-color: #1fbae0 !important;
+}
+
+.mat-datepicker-toggle-active[_ngcontent-ng-c4230508017] {
+  color: #1fbae0 !important;
+}
+.mat-datepicker-toggle-active {
+  color: #1fbae0 !important;
+}
+
+.mat-datepicker-toggle-active {
+  color:#1fbae0 !important;
+}
+.bouton1{
+  position: absolute;
+  right: 0px;
+  margin-top: 12px;
+  margin-right: 75px;
+
+  align-items: center;
+  background: #1fbae0;
+  color: white;
+}
+.bouton2{
+
+  position: absolute;
+  right: 100px;
+  margin-top: 12px;
+
+  margin-right: 90px;
+
+  align-items: center;
+}
+
+
+.mat-icon-custom{
+  float: left;
+   margin-top: 25px;
+   margin-left: 13px;
+   margin-right: 0px;
+}
+
+
+

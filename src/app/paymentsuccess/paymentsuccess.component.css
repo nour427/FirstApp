@@ -1,0 +1,30 @@
+
+.container
+{
+      text-align: center;
+  color: black;
+}
+h1{
+  font-weight: bold;
+  margin-top: 15px;
+    text-align: center;
+
+
+}
+.mat-icon-custom {
+  color:green;
+  font-size: 80px;
+  height: 80px;
+  width: 80px;
+  float: center; margin-top: 10px; margin-left: 220px;
+}
+.bouton{
+
+  position: absolute;
+  width: 400px;
+margin-top: 50px;
+margin-left: 75px;
+  align-items: center;
+  background: #1fbae0;
+  color: white;
+}

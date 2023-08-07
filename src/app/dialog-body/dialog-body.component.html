@@ -1,0 +1,117 @@
+
+  <div mat-dialog-title >
+   <button
+      mat-icon-button
+      style="float: right; margin-top: 10px; margin-right:0px"
+      [mat-dialog-close]="true">
+      <mat-icon>close</mat-icon>
+    </button>
+      <mat-icon class="mat-icon-custom">outlined_flag05</mat-icon>
+
+  </div>
+
+  <div mat-dialog-content>
+    <header>
+      <h2>
+        Créer un projet
+      </h2>
+      <h4 >
+        veuillez saisir un nom pour ce projet
+      </h4>
+    </header>
+    <form [formGroup]="createProject" (ngSubmit)="submit()">
+    <mat-form-field appearance="outline" color="primary" >
+      <mat-label>nom du projet</mat-label>
+      <input matInput
+       placeholder="projet num"
+       formControlName="nomProjet"
+       id="nomProjet"
+        required/>
+      <mat-error *ngIf="createProject.get('nomProjet')!.errors">
+        veuillez choisir un nom de projet
+      </mat-error>
+    </mat-form-field>
+
+
+
+    <mat-form-field appearance="outline" >
+    <mat-label>Date de début de projet</mat-label>
+    <input matInput
+           [matDatepicker]="startPicker"
+           formControlName="startDate"
+           id="startDate"
+           required>
+    <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+    <mat-datepicker #startPicker [startAt]="startDate">
+      <mat-datepicker-actions>
+        <button    mat-raised-button    matDatepickerCancel color="basic" >Cancel</button>
+        <button mat-raised-button style="background-color: #1fbae0; color:white;" matDatepickerApply>Appliquer</button>
+      </mat-datepicker-actions>
+    </mat-datepicker>
+<mat-error *ngIf="createProject.get('startDate')!.errors">
+      veuillez choisir une date
+    </mat-error>
+
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Date de fin de projet</mat-label>
+    <input matInput
+           [matDatepicker]="endPicker"
+           formControlName="endDate"
+           id="endDate"
+           [min]="minDate"
+            required>
+
+    <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+    <mat-datepicker #endPicker [startAt]="startDate">
+      <mat-datepicker-actions>
+        <button     mat-raised-button matDatepickerCancel color="basic">Cancel</button>
+        <button mat-raised-button style="background-color: #1fbae0; color:white;" matDatepickerApply>Appliquer</button>
+      </mat-datepicker-actions>
+    </mat-datepicker>
+
+    <mat-error *ngIf="createProject.get('endDate')!.errors">
+      veuillez choisir une date
+    </mat-error>
+
+
+  </mat-form-field>
+
+
+<mat-form-field appearance="outline" >
+  <mat-label>surface</mat-label>
+  <input   matInput
+            formControlName="surface"
+           id="surface"
+
+          placeholder="projet num"  required/>
+  <mat-error *ngIf="createProject.get('surface')!.errors">
+    veuillez préciser la surface
+  </mat-error>
+    </mat-form-field>
+    <div class="boutons">
+      <button
+      mat-raised-button
+      type="submit"
+      class="bouton1"
+      (click)="openPayment()"
+    >
+      confirmer
+    </button>
+    <button
+    mat-raised-button
+    [mat-dialog-close]="true"
+    color="basic"
+  class="bouton2"
+
+  >
+    cancel
+  </button>
+</div>
+      </form>
+
+
+  </div>
+
+  <div mat-dialog-actions></div>
+

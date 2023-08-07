@@ -1,0 +1,109 @@
+h2{
+
+  color: black;
+
+
+  margin-bottom: 5px;
+}
+h4 {
+  color: hwb(0 50% 50%);
+
+}
+h1{
+  color: black;
+  font-weight: bold;
+  margin-bottom: 5px;
+
+
+}
+h3{
+  color: black;
+  font-weight: bold;
+  margin-bottom: 5px;
+
+}
+mat-card-subtitle{
+  margin-bottom: 10px;
+
+
+}
+
+.text
+{
+  margin-top: 30px;
+  margin-left: 20px;
+}
+.bouton1{
+  position: absolute;
+  right: 0px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  margin-right: 44px;
+
+  align-items: center;
+  background: #1fbae0;
+  color: white;
+
+}
+.bouton2{
+
+  position: absolute;
+  right: 100px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+
+  margin-right: 60px;
+
+  align-items: center;
+}
+
+.example-section {
+  margin: 12px 0;
+  align-items: center;
+  justify-content: center;
+
+}
+.icon1{
+  margin-top: 30px;
+
+  width: 50px;
+  height: 50px;
+}
+
+
+
+.mat-icon-custom {
+  float: left;
+   margin-top: 15px;
+   margin-left: 13px;
+   margin-right: 0px;
+
+}
+.mat-mdc-radio-button ~ .mat-mdc-radio-button {
+  margin-left: 10px;
+}
+.mat-mdc-icon-button .mat-mdc-button-touch-target {
+  position: absolute;
+  top: 50%;
+  height: 0px;
+  left: 50%;
+  width: 0px;
+  transform: translate(-50%, -50%);
+}
+.example-card{
+  margin-left: 8px;
+  margin-bottom: 25px;
+  margin-right: 12px;
+width: 270px;
+
+  }
+  .example-radio-group {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+.example-margin{
+  margin-left: 30px;
+}
+

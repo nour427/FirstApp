@@ -1,0 +1,44 @@
+
+<mat-dialog-content >
+
+  <div id="main">
+    <div id="container" >
+      <div id="panel">
+        <h1>Payment details</h1>
+        <mat-divider></mat-divider>
+        <h3>billing adress</h3>
+        <form id="payment-form">
+      <div id="payment-element" #paymentElementRef>
+
+          </div>
+          <h3>Type de payment</h3>
+
+          <mat-form-field
+            appearance="outline"
+            style="width: 550px; height: 10px; margin-bottom: 60px"
+          >
+            <mat-label>options</mat-label>
+
+            <mat-select formControlName="type" required>
+              <mat-option value="Trimestriel">Trimestriel</mat-option>
+              <mat-option value="semestriel">semestriel</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button
+            mat-raised-button
+            id="submit"
+            (click)="handlePayment()"
+            style="
+              width: 548px;
+              align-items: center;
+              background: #1fbae0;
+              color: white;
+            "
+          >
+            confirmer
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>

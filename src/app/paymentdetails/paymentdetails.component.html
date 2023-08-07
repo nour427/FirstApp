@@ -1,0 +1,390 @@
+<!--my work of payment details whithout stripe-->
+<div mat-dialog-title style="height: 100px">
+  <h1>Payment Details</h1>
+</div>
+<mat-divider></mat-divider>
+<div mat-dialog-content>
+  <header>
+    <h3>billing Adress</h3>
+  </header>
+  <form [formGroup]="paymentdetails" (click)="go()">
+    <div class="tout">
+      <mat-radio-group
+        class="example-radio-group"
+        formControlName="radio1"
+        required
+      >
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-radio-button color="primary" class="example-margin" value="1"
+              >Payer par carte de crédit</mat-radio-button
+            >
+            <div class="images" style="display: flex">
+              <img
+                style="
+                  width: 40px;
+                  height: 35px;
+                  margin-right: 10px;
+                  margin-left: 160px;
+                  margin-top: 5px;
+                "
+                src="/assets/visa.png"
+              />
+              <img
+                style="
+                  width: 40px;
+                  height: 40px;
+                  margin-right: 10px;
+                  margin-top: 3px;
+                "
+                src="/assets/stripe.png"
+              />
+
+              <img
+                style="width: 30px; height: 20px; margin-top: 10px"
+                src="/assets/card.png"
+              />
+            </div>
+          </mat-card-header>
+
+          <mat-card-content>
+            <div class="example-container">
+              <mat-form-field
+                appearance="outline"
+                style="width: 360px; height: 10px"
+                hintLabel="nom sur la carte"
+              >
+                <input
+                  matInput
+                  type="text"
+                  class="example-right-align"
+                  placeholder="Entrer votre nom"
+                />
+              </mat-form-field>
+
+              <mat-form-field
+                appearance="outline"
+                style="width: 120px; height: 10px"
+                hintLabel="Expiry"
+              >
+                <input matInput placeholder="Expiry" />
+              </mat-form-field>
+            </div>
+
+            <div class="example-container" style="margin-top: 20px">
+              <mat-form-field
+                appearance="outline"
+                style="width: 360px; height: 10px"
+                hintLabel="Numero de la carte"
+              >
+                <input
+                  matInput
+                  type="text"
+                  class="example-right-align"
+                  placeholder="Numero de la carte"
+                />
+              </mat-form-field>
+
+              <mat-form-field
+                appearance="outline"
+                style="width: 120px; height: 10px"
+                hintLabel="cvv"
+              >
+                <input
+                  matInput
+                  maxlength="3"
+                  [type]="hide ? 'password' : 'text'"
+                  placeholder="cvv"
+                />
+              </mat-form-field>
+            </div>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-radio-button color="primary" class="example-margin" value="2"
+              >Apple Pay
+              <h5>
+                Nombre illimité d'utilisateurs et de données individuelles
+              </h5>
+            </mat-radio-button>
+            <img
+              style="width: 40px; height: 30px; margin-left: 160px"
+              src="/assets/apple-pay.png"
+            />
+          </mat-card-header>
+        </mat-card>
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-radio-button color="primary" class="example-margin" value="3"
+              >Paypal
+              <h5>
+                Nombre illimité d'utilisateurs et de données individuelles
+              </h5>
+            </mat-radio-button>
+            <img
+              style="width: 20px; height: 20px; margin-left: 160px"
+              src="/assets/paypal.png"
+            />
+          </mat-card-header>
+        </mat-card>
+      </mat-radio-group>
+    </div>
+
+    <mat-error *ngIf="paymentdetails.get('radio1')!.errors">
+      veuillez choisir une méthode
+    </mat-error>
+
+    <h3>Type de payment</h3>
+
+    <mat-form-field
+      appearance="outline"
+      style="width: 535px; height: 10px; margin-bottom: 60px"
+    >
+      <mat-label>options</mat-label>
+
+      <mat-select formControlName="type" required>
+        <mat-option value="Trimestriel">Trimestriel</mat-option>
+        <mat-option value="semestriel">semestriel</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-error *ngIf="paymentdetails.get('type')!.errors">
+      veuillez choisir le type
+    </mat-error>
+
+    <button
+      mat-raised-button
+      type="submit"
+      style="
+        width: 535px;
+        align-items: center;
+        background: #1fbae0;
+        color: white;
+      "
+    >
+      confirmer
+    </button>
+  </form>
+</div>
+<div mat-dialog-actions></div>
+
+<!--
+ <form style="font-size: 12px" (ngSubmit)="go()">
+
+    <script src="https://js.stripe.com/v3/"></script>
+
+
+  </form>
+  -->
+
+<!--
+<mat-error *ngIf="paymentdetails.get('radio1')!.errors">
+      veuillez choisir une méthode
+    </mat-error>
+
+   -->
+
+<!--
+
+
+    <input type="text"  placeholder="Name">
+    <input type="text" placeholder="Email">
+    <input type="text"  placeholder="Amount">
+    <div class="stripe-card" ngxStripeCardGroup [elementsOptions]="elementsOptions">
+      <h4>Enter payment details</h4>
+
+      <div class="stripe-element">
+        <ngx-stripe-card-number
+          [options]="cardOptions"
+          ></ngx-stripe-card-number>
+      </div>
+
+      <div fxLayout="row" fxLayoutGap="10px">
+        <div class="w-full stripe-element">
+          <ngx-stripe-card-expiry
+            [options]="cardOptions"
+          ></ngx-stripe-card-expiry>
+        </div>
+        <div class="w-full stripe-element">
+          <ngx-stripe-card-cvc
+            [options]="cardOptions"
+          ></ngx-stripe-card-cvc>
+        </div>
+      </div>
+    </div>
+-->
+
+<!--card 1 fih 4 champs
+
+    <div class="tout">
+      <mat-radio-group
+        class="example-radio-group"
+        formControlName="radio1"
+        required
+      >
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-radio-button color="primary" class="example-margin" value="1"
+              >Payer par carte de crédit</mat-radio-button
+            >
+            <div class="images" style="display: flex">
+              <img
+                style="
+                  width: 40px;
+                  height: 35px;
+                  margin-right: 10px;
+                  margin-left: 160px;
+                  margin-top: 5px;
+                "
+                src="/assets/visa.png"
+              />
+              <img
+                style="
+                  width: 40px;
+                  height: 40px;
+                  margin-right: 10px;
+                  margin-top: 3px;
+                "
+                src="/assets/stripe.png"
+              />
+
+              <img
+                style="width: 30px; height: 20px; margin-top: 10px"
+                src="/assets/card.png"
+              />
+            </div>
+          </mat-card-header>
+
+          <mat-card-content>
+            <div class="example-container">
+              <mat-form-field
+                appearance="outline"
+                style="width: 360px; height: 10px"
+                hintLabel="nom sur la carte"
+              >
+                <input
+                  matInput
+                  type="text"
+                  class="example-right-align"
+                  placeholder="Entrer votre nom"
+                />
+              </mat-form-field>
+
+              <mat-form-field
+                appearance="outline"
+                style="width: 120px; height: 10px"
+                hintLabel="Expiry"
+              >
+                <input matInput placeholder="Expiry" />
+              </mat-form-field>
+            </div>
+
+            <div class="example-container" style="margin-top: 20px">
+              <mat-form-field
+                appearance="outline"
+                style="width: 360px; height: 10px"
+                hintLabel="Numero de la carte"
+              >
+                <input
+                  matInput
+                  type="text"
+                  class="example-right-align"
+                  placeholder="Numero de la carte"
+                />
+              </mat-form-field>
+
+              <mat-form-field
+                appearance="outline"
+                style="width: 120px; height: 10px"
+                hintLabel="cvv"
+              >
+                <input
+                  matInput
+                  maxlength="3"
+                  [type]="hide ? 'password' : 'text'"
+                  placeholder="cvv"
+                />
+              </mat-form-field>
+            </div>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="example-card" >
+          <mat-card-header>
+            <mat-radio-button color="primary" class="example-margin"             value="2"
+
+              >Apple Pay
+              <h5>
+                Nombre illimité d'utilisateurs et de données individuelles
+              </h5>
+            </mat-radio-button>
+            <img
+              style="width: 40px; height: 30px; margin-left: 160px"
+              src="/assets/apple-pay.png"
+            />
+          </mat-card-header>
+        </mat-card>
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-radio-button color="primary" class="example-margin"             value="3"
+
+              >Paypal
+              <h5>
+                Nombre illimité d'utilisateurs et de données individuelles
+              </h5>
+            </mat-radio-button>
+            <img
+              style="width: 20px; height: 20px; margin-left: 160px"
+              src="/assets/paypal.png"
+            />
+          </mat-card-header>
+        </mat-card>
+      </mat-radio-group>
+    </div>
+
+
+    <mat-error *ngIf="paymentdetails.get('radio1')!.errors">
+      veuillez choisir une méthode
+    </mat-error>
+
+      <h3>Type de payment</h3>
+
+      <mat-form-field
+        appearance="outline"
+        style="width: 535px; height: 10px; margin-bottom: 60px"
+      >
+        <mat-label>options</mat-label>
+
+        <mat-select required>
+          <mat-option value="Trimestriel">Trimestriel</mat-option>
+          <mat-option value="semestriel">semestriel</mat-option>
+        </mat-select>
+      </mat-form-field>
+       <form novalidate (ngSubmit)="createToken()" [formGroup]="stripeTest">
+    <input type="text" formControlName="name" placeholder="Jane Doe">
+    <ngx-stripe-card
+      [options]="cardOptions"
+      [elementsOptions]="elementsOptions"
+
+    ></ngx-stripe-card>
+
+    <div fxLayout="row" fxLayoutGap="10px">
+      <div class="w-full stripe-element">
+        <ngx-stripe-card-expiry
+
+          [options]="cardOptions"
+        ></ngx-stripe-card-expiry>
+      </div>
+
+      <div class="w-full stripe-element">
+        <ngx-stripe-card-cvc
+          [options]="cardOptions"
+        ></ngx-stripe-card-cvc>
+      </div>
+    </div>
+
+
+    <button type="submit">
+      CREATE TOKEN
+    </button>
+-->
