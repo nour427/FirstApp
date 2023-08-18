@@ -1,0 +1,19 @@
+
+.bouton1{
+  margin-top: 30px;
+  width: 48%;
+align-items: center;
+right:0px;
+
+}
+.bouton2{
+
+  margin-top: 30px;
+  width: 48%;
+  align-items: center;
+  background: #1fbae0;
+  color: white;
+left:0px;
+margin-left: 10px;
+}
+

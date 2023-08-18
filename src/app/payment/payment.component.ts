@@ -40,16 +40,19 @@ radio!:MatRadioButton;
 
   openPaymentdetails() {
 
-    if (this.payment.valid){
+    if ((this.payment.valid) &&(this.payment.controls['radio'].value==1)){
       this.dialogRef?.close();
-
-        this.matDialog.open(PaymentAccordionComponent,{
-        width:'620px', autoFocus: false })
+      this.matDialog.open(PaymentAccordionComponent,{height: '70vh',
+      width: '50vw',
+      maxHeight: '70vh',
+      maxWidth: '50vw',
+     autoFocus: false })
 
     }
 
   }
 
+  //TODO si choix 2 personnaliser => mail + une autre fenetre
 
 
   go() {
@@ -57,7 +60,6 @@ radio!:MatRadioButton;
       console.log(this.payment.controls['radio'].value);
 
     }
-
   }
 
 }

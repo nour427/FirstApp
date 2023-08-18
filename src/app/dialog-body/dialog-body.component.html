@@ -7,10 +7,8 @@
       <mat-icon>close</mat-icon>
     </button>
       <mat-icon class="mat-icon-custom">outlined_flag05</mat-icon>
-
   </div>
-
-  <div mat-dialog-content>
+  <div mat-dialog-content >
     <header>
       <h2>
         Créer un projet
@@ -90,28 +88,27 @@
   </mat-error>
     </mat-form-field>
     <div class="boutons">
-      <button
-      mat-raised-button
-      type="submit"
-      class="bouton1"
-      (click)="openPayment()"
-    >
-      confirmer
-    </button>
+
     <button
     mat-raised-button
     [mat-dialog-close]="true"
     color="basic"
-  class="bouton2"
+  class="bouton1"
 
   >
     cancel
   </button>
+  <button
+  mat-raised-button
+  type="submit"
+  class="bouton2"
+  (click)="openPayment()"
+>
+  confirmer
+</button>
 </div>
       </form>
 
 
   </div>
-
-  <div mat-dialog-actions></div>
 

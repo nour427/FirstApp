@@ -1,4 +1,4 @@
-<div mat-dialog-title style="display: flex; ">
+<div mat-dialog-title style="display: flex">
 
     <mat-card class="icon1">
       <mat-icon class="mat-icon-custom">layers</mat-icon>
@@ -109,33 +109,33 @@
     <mat-divider></mat-divider>
 
     <div class="boutons">
-      <button
-        mat-raised-button
-        type="submit"
-        class="bouton1"
 
-        (click)="openPaymentdetails()"
-
-      >
-        confirmer
-
-      </button>
 
       <button
         mat-raised-button
         [mat-dialog-close]="true"
         color="basic"
-        class="bouton2"
+        class="bouton1"
 
 
         (click)="openDialog()"
       >
         Précedente
       </button>
+      <button
+      mat-raised-button
+      type="submit"
+      class="bouton2"
+
+      (click)="openPaymentdetails()"
+
+    >
+      confirmer
+
+    </button>
     </div>
   </form>
 </div>
 
-<div mat-dialog-actions></div>
 
 

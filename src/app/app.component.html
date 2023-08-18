@@ -2,16 +2,25 @@
   <span>home</span>
   <span class="example-spacer"></span>
   <button mat-raised-button   style="     background: #1fbae0;
-  color: white; margin-top: 8px; margin-right: 20px ;" (click)="openDialog()">
+  color: white; margin-top: 8px;" (click)="openDialog()">
     <mat-icon>add_circle_outline</mat-icon>
     <span class="m-x-8">créer</span>
   </button>
-
-  <button mat-raised-button   style="  background: #1fbae0;margin-right: 20px ;
+  <button mat-raised-button   style="     background: #1fbae0;
+  color: white; margin-top: 8px; " (click)="openPayment()">
+    <mat-icon>add_circle_outline</mat-icon>
+    <span class="m-x-8">payment </span>
+  </button>
+  <button mat-raised-button   style="     background: #1fbae0;
+  color: white; margin-top: 8px; " (click)="accordionPayment()">
+    <mat-icon>add_circle_outline</mat-icon>
+    <span class="m-x-8">paymentDetails </span>
+  </button>
+  <button mat-raised-button   style="  background: #1fbae0;
   color: white; margin-top: 8px;" (click)="openPaymentsuccess()">
     <span class="m-x-8">paymentsuccess</span>
   </button>
-  <button mat-raised-button   style="  background: #1fbae0;margin-right: 20px ;
+  <button mat-raised-button   style="  background: #1fbae0;
   color: white; margin-top: 8px;" (click)="openPaymentechec()">
     <mat-icon>add_circle_outline</mat-icon>
     <span class="m-x-8">paymentechec</span>

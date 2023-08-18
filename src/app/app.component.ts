@@ -18,11 +18,27 @@ export class AppComponent {
 
 openDialog(){
   this.matDialog.open(DialogBodyComponent,{
-  width:'350px', autoFocus: false })
+    height: '80vh',
+ width: '30vw',
+    maxHeight: '80vh',
+    maxWidth: '30vw',
+    autoFocus: false, })
 
 }
+openPayment(){
+  this.matDialog.open(PaymentComponent,{
+  width:'620px', autoFocus: false })
 
+}
+accordionPayment(){
 
+  this.matDialog.open(PaymentAccordionComponent,{height: '70vh',
+  width: '50vw',
+  maxHeight: '70vh',
+  maxWidth: '50vw',
+ autoFocus: false })
+
+}
 openPaymentsuccess(){
 
   this.matDialog.open(PaymentsuccessComponent,{

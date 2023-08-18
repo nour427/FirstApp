@@ -1,42 +1,63 @@
-
-<mat-dialog-content >
-
+<mat-dialog-content>
   <div id="main">
-    <div id="container" >
+    <div id="container">
       <div id="panel">
         <h1>Payment details</h1>
         <mat-divider></mat-divider>
-        <h3>billing adress</h3>
-        <form id="payment-form">
-      <div id="payment-element" #paymentElementRef>
 
+ <h3>billing adress</h3>
+            <form id="payment-form" [formGroup]="billingForm">
+
+
+          <div id="#card-element" #paymentElementRef></div>
+          <mat-divider></mat-divider>
+          <mat-card>
+<mat-card-subtitle style=" color:rgb(83, 81, 81);margin-left: 15px;margin-top: 10px; margin-bottom: 15px;">
+  vos coordonnées
+</mat-card-subtitle>
+            <mat-card-content >
+              <mat-form-field
+                appearance="outline"
+                style="margin-right: 10px; width: 100% ;"
+              >
+                <input matInput formControlName="name" placeholder="Nom du détenteur" required/>
+                <mat-error *ngIf="billingForm.get('name')!.errors">
+                  veuillez écrire votre nom
+                </mat-error>
+              </mat-form-field>
+              <br>
+              <mat-checkbox color="primary" (change)="isSelected($event)"> adresse e-mail </mat-checkbox>
+              <div *ngIf="x">
+                <mat-form-field appearance="outline" style="width:100%">
+                  <input matInput formControlName="email" placeholder="Email" required/>
+                  <mat-error *ngIf="billingForm.get('email')!.errors">
+                    veuillez écrire votre e-mail
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </mat-card-content>
+          </mat-card>
+          <div class="boutons">
+
+
+            <button
+              mat-raised-button
+              [mat-dialog-close]="true"
+              color="basic"
+              class="bouton1"
+              (click)="openPayment()"
+            >
+              Précedente
+            </button>
+            <button
+              mat-raised-button
+              type="submit"
+              class="bouton2"
+              (click)="handlePayment()"
+            >
+              confirmer
+            </button>
           </div>
-          <h3>Type de payment</h3>
-
-          <mat-form-field
-            appearance="outline"
-            style="width: 550px; height: 10px; margin-bottom: 60px"
-          >
-            <mat-label>options</mat-label>
-
-            <mat-select formControlName="type" required>
-              <mat-option value="Trimestriel">Trimestriel</mat-option>
-              <mat-option value="semestriel">semestriel</mat-option>
-            </mat-select>
-          </mat-form-field>
-          <button
-            mat-raised-button
-            id="submit"
-            (click)="handlePayment()"
-            style="
-              width: 548px;
-              align-items: center;
-              background: #1fbae0;
-              color: white;
-            "
-          >
-            confirmer
-          </button>
         </form>
       </div>
     </div>
