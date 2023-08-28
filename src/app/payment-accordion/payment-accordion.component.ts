@@ -59,8 +59,10 @@ isSelected(event: any) {
     const publishableKey =
       'pk_test_51NShvBAsWPWZdLNGjRSfGppEtpdiPxKfc3UK86MYmeR6SQ8JHiw1VzcuQCMbCIYNTXpBlouSiPPeWHDQ0v3NcU4R0066hM2ZS7';
     this.stripe = Stripe(publishableKey);
+    const endpointSecret = "whsec_7f60ce0a615a70ec4df069f7b95c63f7eabd662011653b08b290d35b271aec62";
 
     // Fetch the client secret from the server
+
     const response = await fetch('http://localhost:3000/create-intent', {
       method: 'POST',
       headers: {
@@ -113,12 +115,13 @@ isSelected(event: any) {
     paymentElement.mount(this.paymentElementRef?.nativeElement);
 
 
+
   }
 
 
 
   async handlePayment() {
-    const appearance = {
+ const appearance = {
       theme: 'stripe',
       variables: { colorPrimaryText: '#262626' },
     };
@@ -162,7 +165,7 @@ isSelected(event: any) {
           return_url: 'https://example.com',
         },
       });
-     
+
 
       if (result.error) {
         this.dialogRef?.close();
@@ -187,9 +190,12 @@ isSelected(event: any) {
       console.error('Payment error');
     }
 
+
+
     //method with post error but it specifies the type pf error
 
-    /*const result = await this.stripe.confirmPayment({
+/*
+      const result = await this.stripe.confirmPayment({
       clientSecret: this.clientSecret,
       confirmParams: {
         return_url: 'https://your-website.com/payment-return', // Replace with your actual return URL
@@ -206,8 +212,8 @@ isSelected(event: any) {
       console.log('PaymentIntent ID: ' + result.paymentIntent.id);
       console.log('PaymentIntent status: ' + result.paymentIntent.status);
 
-    }
-*/
+    }*/
+
 
     // Handle payment submission, e.g., complete the payment or show payment success/error message
     // Send the payment intent to the backend for confirmation and payment processing
